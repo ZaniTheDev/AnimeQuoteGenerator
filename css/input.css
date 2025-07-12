@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.input-container {
+    position: relative;
+    width: 400px;
+    max-width: 90vw;
+}
+
+.input-anime {
+    width: 100%;
+    padding: 18px 24px;
+    font-size: 16px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 400;
+    background: rgba(10, 10, 30, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 12px;
+    color: #00ffff;
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    box-shadow: 
+        0 4px 15px rgba(0, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.input-anime::placeholder {
+    color: rgba(0, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.input-anime:focus {
+    background: rgba(10, 10, 30, 0.95);
+    border-color: #ff0080;
+    box-shadow: 
+        0 0 25px rgba(255, 0, 128, 0.4),
+        0 0 50px rgba(0, 255, 255, 0.2),
+        0 4px 20px rgba(255, 0, 128, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px) scale(1.02);
+    color: #ffffff;
+}
+
+.input-anime:focus::placeholder {
+    color: rgba(255, 0, 128, 0.8);
+    transform: translateX(5px);
+}
+
+.input-anime:hover:not(:focus) {
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 
+        0 6px 20px rgba(0, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.input-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080, #00ffff);
+    background-size: 300% 300%;
+    border-radius: 14px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.input-anime:focus + .input-glow {
+    opacity: 1;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.input-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #00ffff;
+    border-radius: 50%;
+    animation: particleFloat 4s ease-in-out infinite;
+    opacity: 0;
+    box-shadow: 0 0 6px #00ffff;
+}
+
+.particle:nth-child(even) {
+    background: #ff0080;
+    box-shadow: 0 0 6px #ff0080;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-15px) translateX(10px) rotate(180deg);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px) translateX(-10px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.input-anime.typing {
+    animation: typingPulse 0.1s ease-in-out;
+}
+
+@keyframes typingPulse {
+    0% {
+        transform: translateY(-2px) scale(1.02);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.025);
+    }
+    100% {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-anime {
+        font-size: 14px;
+        padding: 16px 20px;
+    }
+    
+    .input-container {
+        width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-anime {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+    
+    .input-container {
+        width: 300px;
+    }
+}
