@@ -1,6 +1,4 @@
-Here's a clean and beginner-friendly **README.md** file for your anime quote generator project. I’ll keep it Gen Z-friendly but still professional enough to make your GitHub repo look 🔥.
 
----
 
 ```markdown
 # 🎌 Anime Quote Generator
