@@ -27,3 +27,29 @@ A fun little web app that fetches and displays random anime quotes based on the 
 3. App fetches quotes using the [Animechan API](https://animechan.io/).
 4. A random quote and character name is displayed.
 5. If anything breaks (API error, bad anime name), it shows a default message like:
+
+
+
+---
+
+## 🔧 Tech Stack
+
+- HTML
+- CSS (for animations & styles)
+- JavaScript (Vanilla)
+- External API: [animechan.io](https://animechan.io/)
+
+---
+
+## 🚀 Getting Started
+
+To run it locally:
+
+```bash
+1. Clone the repo or copy the code
+2. Open `index.html` in your browser
+3. Start typing an anime and click the button!
+```
+
+
+
