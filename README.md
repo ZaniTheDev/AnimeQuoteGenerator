@@ -1,6 +1,6 @@
 # 🎌 Anime Quote Generator
 
-A fun little web app that fetches and displays random anime quotes based on the anime title you type. If the anime isn’t available or there’s an error, a custom fallback message is shown so it still looks clean!
+A web app that fetches and displays random anime quotes based on the anime title you type. If the anime isn’t available or there’s an error, a custom fallback message is shown so it still looks clean!
 
 ---
 
